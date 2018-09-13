@@ -19,7 +19,11 @@
   </div>
 
 <div class="row">
-  <app-film [film]="film" *ngFor="let film of films | filmFinder:searchPattern:searchField"></app-film>
+  <app-film 
+    [film]="film"  
+     *ngFor="let film of films | filmFinder:searchPattern:searchField"
+     (deleteFilm)="onDeleteFilm($event)">
+  </app-film>
 </div>
 
 

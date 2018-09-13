@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Film } from '../../../shared/models/film.model';
 
 @Component({
@@ -6,6 +6,11 @@ import { Film } from '../../../shared/models/film.model';
   templateUrl: './film.component.html'
 })
 export class FilmComponent {
-  @Input() film: Film 
+  @Input() film: Film;
+  @Output() deleteFilm: EventEmitter<Film> = new EventEmitter<Film>();
+
+  onClickDeleteFilm(): void {
+    this.deleteFilm.emit(this.film)
+  }
 
 }
