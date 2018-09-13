@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 })
 export class FilmListComponent {
   films: Array<Film> = filmsMock;
-  filmToCreate: Film = new Film();
   posterPreview: string = '';
   searchField: string = 'title';
 
@@ -16,9 +15,8 @@ export class FilmListComponent {
     this.films = this.films.filter(f => f.title !== film.title);
   }
 
-  ocClickCreateFilm(): void {
-    this.films.push(this.filmToCreate);
-    this.filmToCreate = new Film();
+  onAddFilm(theFuckingFilm: Film): void {
+    this.films.push(theFuckingFilm);
   }
 
   onChangePosterInput(poster: string): void {
