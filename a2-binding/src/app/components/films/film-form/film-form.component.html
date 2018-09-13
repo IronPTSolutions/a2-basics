@@ -1,0 +1,31 @@
+<div class="row mt-4">
+  <form class="col-4" (ngSubmit)="onClickCreateFilm()" #form='ngForm'>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fa fa-tag"></i></span>
+      </div>
+      <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="filmToCreate.title">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fa fa-tag"></i></span>
+      </div>
+      <textarea type="text" class="form-control" placeholder="Summary" name="summary" [(ngModel)]="filmToCreate.summary"></textarea>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fa fa-picture-o"></i></span>
+      </div>
+      <input type="text" class="form-control" placeholder="Poster" name="poster" [(ngModel)]="filmToCreate.poster">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+      </div>
+      <input type="date" class="form-control" placeholder="Title" name="releaseDate" [(ngModel)]="filmToCreate.releaseDate">
+    </div>
+    <div class="form-actions">
+      <button type="button" class="btn btn-primary btn-block" (click)="onClickCreateFilm()">Add film</button>
+    </div>
+  </form>
+</div>

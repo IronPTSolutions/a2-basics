@@ -16,7 +16,7 @@ export class FilmListComponent {
     this.films = this.films.filter(f => f.title !== film.title)
   }
 
-  ocClickCreateFilm(): void {
+  onClickCreateFilm(): void {
     this.films.push(this.filmToCreate);
     this.filmToCreate = new Film();
   }
