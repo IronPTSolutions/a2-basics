@@ -18,19 +18,10 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="card-group">
-      <div class="card" *ngFor="let film of films | filmFinder:searchPattern:searchField" style="width: 18rem;">
-        <img class="card-img-top" [src]="film.poster" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{ film.title | uppercase }}</h5>
-          <p class="card-text"><small>{{ film.releaseDate }}</small></p>
-          <p class="card-text">{{ film.summary }}</p>
-          <button class="btn btn-danger btn-block" [disabled]="film.title === 'La monja'" (click)="onClickDeleteFilm(film.title)">Delete</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="row">
+  <app-film [film]="film" *ngFor="let film of films | filmFinder:searchPattern:searchField"></app-film>
+</div>
+
 
   <div class="row mt-4">
     <form class="col-4">
