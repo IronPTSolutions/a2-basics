@@ -1,0 +1,11 @@
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="film.poster" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ film.title | uppercase }}</h5>
+    <p class="card-text"><small>{{ film.releaseDate }}</small></p>
+    <p class="card-text">{{ film.summary }}</p>
+    <button class="btn btn-danger btn-block" [disabled]="film.title === 'La monja'"
+      (click)="onDeleteFilm()">Delete</button>
+  </div>
+</div>
