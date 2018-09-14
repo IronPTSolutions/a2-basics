@@ -11,6 +11,7 @@ export class FilmFormComponent {
   @Output() private createFilm: EventEmitter<Film> = new EventEmitter<Film>();
 
   onClickCreateFilm() {
+
     this.createFilm.emit(this.filmToCreate);
   }
 

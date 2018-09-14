@@ -4,10 +4,16 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1"><i class="fa fa-tag"></i></span>
       </div>
-      <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="filmToCreate.title">
+      <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="filmToCreate.title" required minlength="5" #title="ngModel">
     </div>
+    <div *ngIf="title.errors && (title.dirty || title.touched)">
+      <div [hidden]="!title.errors.required">please fill in this field</div>
+      <div [hidden]="!title.errors.minlength">you need to write at least {{title.errors.minlength.requiredLength | json}} characters</div>    
+    </div>
+    
     <div class="input-group mb-3">
-      <div class="input-group-prepend">
+      <div class="input-group
+      -prepend">
         <span class="input-group-text" id="basic-addon1"><i class="fa fa-tag"></i></span>
       </div>
       <textarea type="text" class="form-control" placeholder="Summary" name="summary" [(ngModel)]="filmToCreate.summary"></textarea>
